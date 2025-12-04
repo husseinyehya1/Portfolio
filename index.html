@@ -1,105 +1,93 @@
-<!-- Save this file as index.html -->
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>حسين يحيي — Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>حسين يحيي — Portfolio</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-  <style>
-  /* ============================================
-     Portfolio Grand CSS — "عظمه" ✨
-     Paste inside <style> in your index.html
-     Works best if page uses these classes/ids:
-     .hero, .navbar, .profile-pic, .about-card, .skills, .skill,
-     .cert-grid, .cert-card, .projects-grid, .project-card, form.contact-form, footer
-     Fonts: Poppins + Cairo (recommended to include via <link> or @import)
-     ============================================ */
-
+<style>
   :root{
-    --bg: #0f1724;
-    --card: rgba(255,255,255,0.04);
-    --glass: rgba(255,255,255,0.06);
-    --muted: rgba(255,255,255,0.65);
-    --accent-1: #7c5cff;
-    --accent-2: #3dd5f3;
-    --accent-gradient: linear-gradient(135deg,var(--accent-1),#5ec8a6 60%,var(--accent-2));
-    --glass-border: rgba(255,255,255,0.08);
-    --glass-border-2: rgba(255,255,255,0.03);
-    --shadow: 0 10px 30px rgba(2,6,23,0.6);
-    --radius-lg: 18px;
-    --radius-md: 12px;
-    --radius-sm: 8px;
-    --max-width: 1100px;
+    --bg:#071021;
+    --card:#0f1a2b;
+    --muted:rgba(255,255,255,0.72);
+    --glass: rgba(255,255,255,0.04);
+    --accent-1:#7c5cff;
+    --accent-2:#3dd5f3;
+    --accent-grad: linear-gradient(135deg,var(--accent-1),#5ec8a6 60%,var(--accent-2));
+    --glass-border: rgba(255,255,255,0.06);
+    --radius:14px;
+    --maxw:1200px;
+  }
+
+  /* Dark/Light theme */
+  :root[data-theme="light"]{
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --muted: #223;
+    --glass: rgba(0,0,0,0.04);
+    --glass-border: rgba(0,0,0,0.06);
   }
 
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
     margin:0;
-    font-family:"Poppins", "Cairo", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background:
-      radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 8%),
-      radial-gradient(1000px 500px at 90% 90%, rgba(61,213,243,0.06), transparent 8%),
-      var(--bg);
-    color:#e9eef8;
+    font-family:"Cairo",system-ui,-apple-system,"Segoe UI",Roboto;
+    background: radial-gradient(600px 300px at 10% 10%, rgba(124,92,255,0.06), transparent),
+                radial-gradient(500px 200px at 90% 90%, rgba(61,213,243,0.03), transparent),
+                var(--bg);
+    color: #e9eef8;
     -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-    padding:40px 20px;
+    padding:20px;
     display:flex;
     justify-content:center;
   }
 
-  .container{
+  .wrap{
     width:100%;
-    max-width:var(--max-width);
-    margin:0 auto;
-    display:grid;
-    grid-template-columns: 1fr;
-    gap:32px;
+    max-width:var(--maxw);
+    margin:10px;
   }
 
-  /* NAVBAR */
-  .navbar{
+  /* NAV */
+  .nav{
     position:sticky;
-    top:18px;
-    z-index:60;
+    top:14px;
+    z-index:50;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:16px;
-    padding:10px;
+    align-items:center;
+    gap:12px;
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid var(--glass-border);
     border-radius:999px;
-    box-shadow: 0 6px 20px rgba(2,6,23,0.45);
-    backdrop-filter: blur(8px) saturate(1.1);
+    padding:8px 14px;
+    border:1px solid var(--glass-border);
+    backdrop-filter: blur(8px);
   }
-  .nav-left{display:flex;align-items:center;gap:12px}
-  .brand{
-    display:flex;flex-direction:column;line-height:1;
+  .brand {display:flex;gap:10px;align-items:center}
+  .brand .logo{
+    height:44px;width:44px;border-radius:10px;
+    background:var(--accent-grad);
+    display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;
+    box-shadow:0 8px 30px rgba(124,92,255,0.08);
   }
-  .brand .name{font-weight:800;letter-spacing:0.2px;font-size:16px}
-  .brand .sub{font-size:11px;color:var(--muted);font-weight:600}
-  .nav-links{display:flex;gap:12px;align-items:center}
+  .brand .txt{display:flex;flex-direction:column;line-height:1}
+  .brand .txt .name{font-weight:800;font-size:15px}
+  .brand .txt .sub{font-size:12px;color:var(--muted);font-weight:600}
+
+  .nav-links{display:flex;gap:8px;align-items:center}
   .nav-links a{
     color:var(--muted);
     text-decoration:none;
-    font-weight:600;
-    padding:8px 12px;
-    border-radius:999px;
-    transition:all .25s ease;
-    font-size:13px;
+    padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px;
+    transition:all .18s ease;
   }
-  .nav-links a:hover{
-    color:white;
-    transform:translateY(-3px);
-    box-shadow:0 6px 18px rgba(124,92,255,0.12);
-  }
+  .nav-links a:hover{transform:translateY(-4px);color:#fff;box-shadow:0 10px 30px rgba(124,92,255,0.08)}
+
+  .controls{display:flex;gap:8px;align-items:center}
 
   /* HERO */
   .hero{
@@ -107,620 +95,438 @@
     grid-template-columns: 360px 1fr;
     gap:28px;
     align-items:center;
+    margin-top:12px;
   }
-  @media (max-width:900px){
-    .hero{grid-template-columns:1fr; text-align:center}
-  }
+  @media (max-width:980px){ .hero{grid-template-columns:1fr;text-align:center} }
 
-  .profile-card{
+  .card{
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:var(--radius-lg);
-    padding:26px;
+    border-radius:var(--radius);
     border:1px solid var(--glass-border);
-    box-shadow: var(--shadow);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:18px;
-    position:relative;
-    overflow:visible;
-  }
-
-  .profile-pic{
-    width:170px;
-    height:170px;
-    border-radius:50%;
-    display:block;
-    object-fit:cover;
-    border:8px solid transparent;
-    background: conic-gradient(from 120deg at 50% 50%, rgba(255,255,255,0.03), transparent 45%, rgba(255,255,255,0.02));
-    padding:4px;
-    box-shadow: 0 8px 30px rgba(2,6,23,0.6), 0 2px 8px rgba(124,92,255,0.06) inset;
-    transform:translateY(-18px);
-  }
-
-  .profile-card::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-    top:-30px;
-    width:220px;height:220px;border-radius:50%;
-    background: radial-gradient(circle at 30% 20%, rgba(124,92,255,0.14), transparent 15%), radial-gradient(circle at 70% 80%, rgba(61,213,243,0.06), transparent 15%);
-    filter: blur(18px);
-    z-index:-1;
-    opacity:.85;
-  }
-
-  .profile-name{font-weight:900;font-size:20px;letter-spacing:0.2px}
-  .profile-role{color:var(--muted);font-weight:600;font-size:13px;margin-top:-6px}
-  .profile-meta{font-size:13px;color:var(--muted);text-align:center;padding:6px 12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid var(--glass-border-2)}
-
-  .stats{
-    display:flex;
-    gap:10px;
-    width:100%;
-    justify-content:space-between;
-    margin-top:4px;
-  }
-  .stat{
-    flex:1;
-    text-align:center;
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-    border:1px solid var(--glass-border-2);
-    padding:8px;
-    border-radius:12px;
-  }
-  .stat h4{margin:0;font-size:14px}
-  .stat p{margin:0;color:var(--muted);font-size:12px}
-
-  /* ABOUT */
-  .about-card{
-    padding:28px;
-    border-radius:var(--radius-lg);
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid var(--glass-border);
+    padding:22px;
     box-shadow: 0 12px 40px rgba(2,6,23,0.55);
   }
-  .about-grid{display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
-  @media (max-width:900px){ .about-grid{grid-template-columns:1fr} }
 
-  .bio h2{margin:0 0 6px 0;font-size:20px}
-  .bio p{color:var(--muted);margin:0 0 12px 0;font-size:15px}
+  /* profile */
+  .profile{
+    display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;
+  }
+  .avatar{
+    width:180px;height:180px;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
+    box-shadow:0 18px 50px rgba(2,6,23,0.55), 0 0 30px rgba(124,92,255,0.06) inset;
+  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .title{font-weight:900;font-size:20px}
+  .subtitle{color:var(--muted);font-weight:700;font-size:13px;margin-top:-6px}
+  .meta{padding:8px 12px;border-radius:12px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-size:13px}
 
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
   .btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:10px 14px;
-    border-radius:12px;
-    font-weight:700;
-    background:var(--accent-gradient);
-    color:white;
-    text-decoration:none;
-    box-shadow: 0 12px 30px rgba(124,92,255,0.14);
-    transition:transform .2s ease, box-shadow .2s ease;
+    padding:10px 14px;border-radius:10px;font-weight:800;background:var(--accent-grad);color:#fff;text-decoration:none;border:0;
+    box-shadow:0 14px 40px rgba(124,92,255,0.12);transition:transform .18s;
   }
-  .btn:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(124,92,255,0.18)}
+  .btn:hover{transform:translateY(-6px)}
 
-  /* SKILLS */
-  .skills{
-    margin-top:12px;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-  }
-  @media (max-width:640px){ .skills{grid-template-columns:1fr} }
-
-  .skill{
-    background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
-    padding:12px;
-    border-radius:12px;
-    border:1px solid var(--glass-border-2);
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-  }
-  .skill .title{display:flex;justify-content:space-between;align-items:center;font-weight:700}
-  .progress{
-    height:10px;
-    background:rgba(255,255,255,0.03);
-    border-radius:999px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,0.02);
-  }
-  .progress > span{
-    display:block;height:100%;
-    background: linear-gradient(90deg, rgba(124,92,255,0.9), rgba(61,213,243,0.95));
-    border-radius:999px;
-    transform-origin:left center;
-    transition:width .9s cubic-bezier(.2,.9,.2,1);
-    box-shadow:0 6px 18px rgba(124,92,255,0.12);
-  }
-
-  .p-100{width:100%}
-  .p-95{width:95%}
-  .p-85{width:85%}
-  .p-70{width:70%}
-
-  /* CERTIFICATES */
-  .cert-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:14px;
-    margin-top:10px;
-  }
-  .cert-card{
-    perspective:1200px;
-  }
-  .cert-inner{
-    position:relative;
-    width:100%;
-    min-height:150px;
-    transition:transform .8s cubic-bezier(.2,.85,.25,1);
-    transform-style:preserve-3d;
-    cursor:pointer;
-  }
-  .cert-card:hover .cert-inner{ transform: rotateY(12deg) translateY(-6px) }
-  .cert-front, .cert-back{
-    position:absolute;inset:0;border-radius:12px;
-    backface-visibility:hidden;
-    padding:16px;
-    display:flex;flex-direction:column;justify-content:center;gap:8px;
-    border:1px solid var(--glass-border);
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    box-shadow:0 10px 28px rgba(2,6,23,0.55);
-  }
-  .cert-back{transform:rotateY(180deg);font-size:14px;color:var(--muted)}
-  .cert-inner.flipped{ transform: rotateY(180deg) }
-
-  /* PROJECTS */
-  .projects-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:18px;
-  }
-  .project-card{
-    border-radius:14px;
-    padding:18px;
-    border:1px solid var(--glass-border);
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-    box-shadow: 0 10px 30px rgba(2,6,23,0.55);
-    transition: transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s;
+  /* About big card */
+  .about{
     display:flex;flex-direction:column;gap:12px;
   }
-  .project-card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 30px 80px rgba(2,6,23,0.7);
-  }
-  .project-card .meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+  .about h2{margin:0;font-size:22px}
+  .about p{color:var(--muted);margin:0}
 
-  .tag{
-    font-size:12px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.02)
-  }
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+  @media (max-width:640px){ .skills-grid{grid-template-columns:1fr} }
 
-  /* CONTACT FORM */
-  .contact-form{
-    display:grid;
-    gap:12px;
-    padding:16px;
-    border-radius:12px;
-    border:1px solid var(--glass-border);
-    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  .skill{
+    background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+    padding:12px;border-radius:12px;border:1px solid var(--glass-border);
   }
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea{
-    background:transparent;
-    border:1px solid rgba(255,255,255,0.06);
-    padding:12px 14px;border-radius:10px;
-    color:inherit;
-    font-size:14px;
-    resize:vertical;
-    min-height:44px;
-    outline:none;
-    transition:box-shadow .18s, border-color .18s;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus{
-    border-color:var(--accent-2);
-    box-shadow: 0 8px 30px rgba(61,213,243,0.06);
-  }
-  .contact-form .send{
-    justify-self:start;
-    padding:12px 18px;border-radius:12px;border:0;background:var(--accent-gradient);
-    color:white;font-weight:800;cursor:pointer;
-    box-shadow:0 14px 40px rgba(124,92,255,0.12);
-    transition:transform .18s;
-  }
-  .contact-form .send:hover{transform:translateY(-6px)}
+  .skill .head{display:flex;justify-content:space-between;align-items:center;font-weight:800}
+  .bar{height:12px;background:rgba(255,255,255,0.03);border-radius:999px;margin-top:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+  .bar > span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));transition:width 900ms cubic-bezier(.2,.9,.2,1)}
 
-  /* FOOTER */
-  footer{
-    padding:18px;
-    text-align:center;
-    color:var(--muted);
-    font-size:13px;
-  }
+  /* timeline */
+  .timeline{margin-top:18px;border-left:3px solid rgba(255,255,255,0.04);padding-left:18px}
+  .tl-item{position:relative;margin-bottom:20px;padding-left:12px}
+  .tl-item::before{content:"";position:absolute;left:-12px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--accent-1);box-shadow:0 0 12px rgba(124,92,255,0.15)}
 
-  .decor-blob{
-    position:absolute;
-    pointer-events:none;
-    filter: blur(16px);
-    opacity:0.6;
-    mix-blend-mode:screen;
+  /* projects */
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:12px}
+  .project{
+    padding:14px;border-radius:12px;border:1px solid var(--glass-border);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));transition:transform .25s;
+  }
+  .project:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(2,6,23,0.5)}
+  .project .meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
+
+  /* certificates flip */
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .cert{perspective:1200px}
+  .cert-inner{position:relative;min-height:160px;border-radius:12px;transition:transform .8s;transform-style:preserve-3d;cursor:pointer}
+  .cert-face{position:absolute;inset:0;border-radius:12px;padding:12px;backface-visibility:hidden;border:1px solid var(--glass-border);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+  .cert-back{transform:rotateY(180deg);color:var(--muted)}
+  .cert-inner.flipped{transform:rotateY(180deg)}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
+  @media (max-width:960px){ .contact-grid{grid-template-columns:1fr} }
+
+  .form{
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:16px;border-radius:12px;border:1px solid var(--glass-border);
+  }
+  input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:15px;resize:vertical}
+  .send{margin-top:8px;padding:12px 16px;border-radius:10px;border:0;background:var(--accent-grad);font-weight:800;color:#fff;cursor:pointer}
+
+  /* footer */
+  footer{margin-top:26px;text-align:center;color:var(--muted);padding:20px 0;font-size:14px}
+
+  /* small responsive tweaks */
+  @media (max-width:720px){
+    .nav{padding:8px}
+    .hero{grid-template-columns:1fr}
+    .avatar{width:140px;height:140px}
+    .projects{grid-template-columns:1fr}
   }
 
+  /* accessibility reduce motion */
   @media (prefers-reduced-motion: reduce){
-    *{transition:none !important;animation:none !important}
+    *{transition:none!important}
   }
 
-  .row{display:flex;gap:12px;align-items:center}
-  .col{display:flex;flex-direction:column;gap:8px}
-  .center{display:flex;align-items:center;justify-content:center}
-
-  @media (max-width:480px){
-    .profile-pic{width:130px;height:130px}
-    .hero{gap:16px}
-    body{padding:18px}
-  }
-
-  /* small helpers for text alignment in rtl */
-  .rtl{direction:rtl}
-  .ltr{direction:ltr}
-  </style>
-
+</style>
 </head>
-<body class="rtl">
-  <div class="container">
+<body>
+  <div class="wrap">
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="nav-left">
-        <div class="brand">
-          <span class="name">حسين يحيي</span>
-          <span class="sub">قائد فريق SOT — الصف الثاني الثانوي</span>
+    <!-- NAV -->
+    <header class="nav" role="navigation" aria-label="Main navigation">
+      <div class="brand">
+        <div class="logo">HY</div>
+        <div class="txt">
+          <div class="name">حسين يحيي</div>
+          <div class="sub">قائد فريق SOT</div>
         </div>
       </div>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#certs">Certificates</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+      <div class="nav-links" role="menubar">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">عني</a>
+        <a href="#skills">المهارات</a>
+        <a href="#projects">مشاريعي</a>
+        <a href="#certs">الشهادات</a>
+        <a href="#contact">تواصل</a>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle" title="Toggle theme" style="background:transparent;border:0;color:var(--muted);font-weight:800;cursor:pointer">🌓</button>
+      </div>
     </header>
 
     <!-- HERO -->
-    <section id="home" class="hero" aria-labelledby="hero-title">
-      <!-- LEFT: Profile card -->
-      <aside class="profile-card" role="region" aria-label="Profile card">
-        <img class="profile-pic" src="https://z-cdn-media.chatglm.cn/files/39841677-cc89-443c-a7ce-91d2b8c188aa.jpg?auth_key=1864888182-47b135cda9b946a9ba6b6efaef3999b6-0-00f81584cd9e90b2f374904d9af2e517" alt="صورة حسين يحيي">
-        <div class="profile-name">حسين يحيي — Hussein Yehya</div>
-        <div class="profile-role">طالب بالصف الثاني الثانوي — قائد فريق SOT</div>
-        <div class="profile-meta">مدرسة الشهيد مدحت طلعت، بنها، القليوبية — مصري 🇪🇬 / مغربي 🇲🇦</div>
+    <section id="home" class="hero">
+      <aside class="card profile">
+        <div class="avatar" aria-hidden="false">
+          <img src="https://z-cdn-media.chatglm.cn/files/39841677-cc89-443c-a7ce-91d2b8c188aa.jpg?auth_key=1864888182-47b135cda9b946a9ba6b6efaef3999b6-0-00f81584cd9e90b2f374904d9af2e517" alt="حسين يحيي">
+        </div>
+        <div class="title" id="typed-name"></div>
+        <div class="subtitle">طالب بالصف الثاني الثانوي — قائد فريق SOT</div>
+        <div class="meta">مدرسة الشهيد مدحت طلعت — بنها، القليوبية — مصري 🇪🇬 / مغربي 🇲🇦</div>
+        <div class="cta-row">
+          <a class="btn" href="https://github.com/husseinyehya1853" target="_blank" rel="noopener noreferrer">زور GitHub</a>
+          <button class="btn" id="downloadCv">تحميل السيرة الذاتية</button>
+        </div>
+      </aside>
 
-        <div class="stats" aria-hidden="true">
-          <div class="stat">
-            <h4>Projects</h4>
-            <p>مشاريع على GitHub</p>
+      <main class="card about" id="about">
+        <h2>عنّي</h2>
+        <p>أنا <strong>حسين يحيي حسين أحمد</strong> — طالب بالصف الثاني الثانوي في مدرسة الشهيد مدحت طلعت الرسمية للغات. قائد فريق <strong>SOT</strong> التابع للإدارة المركزية للأنشطة الطلابية. أُركز على بناء فرق تقنية، تطوير مشاريع تعليمية، ونشر المعرفة داخل المدرسة.</p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+          <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)">
+            <strong>الاسم:</strong> حسين يحيي حسين أحمد
           </div>
-          <div class="stat">
-            <h4>Team</h4>
-            <p>قائد SOT</p>
+          <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)">
+            <strong>الصف:</strong> الثاني الثانوي
           </div>
-          <div class="stat">
-            <h4>Years</h4>
-            <p>متعلم ومطبق</p>
+          <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)">
+            <strong>المدرسة:</strong> الشهيد مدحت طلعت — بنها
           </div>
         </div>
 
-        <a class="btn" href="https://github.com/husseinyehya1853" target="_blank" rel="noopener noreferrer">عرض GitHub</a>
-      </aside>
-
-      <!-- RIGHT: About + details -->
-      <main class="about-card" id="about">
-        <div class="about-grid">
-          <div class="bio">
-            <h2 id="hero-title">عنّي</h2>
-            <p>
-              أنا <strong>حسين يحيي حسين أحمد</strong>، طالب بالصف الثاني الثانوي في مدرسة الشهيد مدحت طلعت الرسمية للغات — بنها، القليوبية.
-              قائد فريق <strong>SOT</strong> التابع للإدارة المركزية للأنشطة الطلابية. عندي خبرة في بناء فرق تقنية وإطلاق مشاريع تعليمية.
-            </p>
-
-            <p class="profile-meta">حاصل على جنسية: مصري + مغربي — بحب البرمجة والأعمال المكتبية والتطوير</p>
-
-            <ul style="margin-top:12px;color:var(--muted);line-height:1.7">
-              <li>إنشاء فريق تقني داخل المدرسة</li>
-              <li>رفع مشاريع على GitHub وإدارتها</li>
-              <liتطوير مشاريع تعليمية (مشاريع ويب وموبايل)</li>
-            </ul>
-
-            <div style="margin-top:14px">
-              <a class="btn" href="https://github.com/husseinyehya1853" target="_blank" rel="noopener noreferrer">زور GitHub</a>
-            </div>
+        <!-- timeline -->
+        <div class="timeline" aria-hidden="false">
+          <div class="tl-item">
+            <strong>2024 — تأسيس الفريق التقني الخاص بالمدرسة</strong>
+            <div style="color:var(--muted)">قمت بتجنيد وإدارة الفريق، وتوزيع المهام وبناء أول مشروع تعليمي.</div>
           </div>
-
-          <div aria-hidden="false" style="display:flex;flex-direction:column;gap:12px;align-items:stretch">
-            <div style="background:transparent;border-radius:12px;padding:12px;border:1px solid var(--glass-border-2)">
-              <div style="font-weight:700;margin-bottom:6px">معلومات سريعة</div>
-              <div style="color:var(--muted);font-size:14px;line-height:1.6">
-                <div><strong>الاسم:</strong> حسين يحيي حسين أحمد</div>
-                <div><strong>الصف:</strong> الصف الثاني الثانوي</div>
-                <div><strong>المدرسة:</strong> مدرسة الشهيد مدحت طلعت الرسمية للغات — بنها</div>
-                <div><strong>الجنسيات:</strong> مصري، مغربي</div>
-              </div>
-            </div>
-
-            <div style="background:transparent;border-radius:12px;padding:12px;border:1px solid var(--glass-border-2)">
-              <div style="font-weight:700;margin-bottom:6px">روابط</div>
-              <div style="display:flex;flex-direction:column;gap:8px">
-                <a class="btn" href="https://github.com/husseinyehya1853" target="_blank" rel="noopener noreferrer">GitHub — husseinyehya1853</a>
-                <!-- ممكن تضيف لينكات تانيه هنا -->
-              </div>
-            </div>
+          <div class="tl-item">
+            <strong>2024 — إطلاق مشاريع على GitHub</strong>
+            <div style="color:var(--muted)">رفع مشاريع عملية وإدارتها عبر الريبو.</div>
+          </div>
+          <div class="tl-item">
+            <strong>2025 — قائد فريق SOT</strong>
+            <div style="color:var(--muted)">المسؤول عن تنسيق أنشطة تقنية على مستوى الإدارة المركزية.</div>
           </div>
         </div>
       </main>
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="about-card" aria-labelledby="skills-title">
-      <h2 id="skills-title">مهاراتي</h2>
-      <p style="color:var(--muted);margin-top:6px">الحاجات اللي إتقنتها تمامًا والحاجات اللي لسه بتتطوّر.</p>
+    <section id="skills" class="card">
+      <h2>مهاراتي</h2>
+      <p style="color:var(--muted)">كل اللي اتقنته والحاجات اللي لسه بتتطوّر.</p>
 
-      <div class="skills" style="margin-top:12px">
-        <!-- Skill: Python (مكتمل) -->
+      <div class="skills-grid" id="skillsGrid">
         <div class="skill">
-          <div class="title"><span>Python</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="100%"></span></div>
+          <div class="head"><span>Python</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
         </div>
 
-        <!-- HTML -->
         <div class="skill">
-          <div class="title"><span>HTML</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="100%"></span></div>
+          <div class="head"><span>HTML</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
         </div>
 
-        <!-- CSS -->
         <div class="skill">
-          <div class="title"><span>CSS</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="100%"></span></div>
+          <div class="head"><span>CSS</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
         </div>
 
-        <!-- Flask -->
         <div class="skill">
-          <div class="title"><span>Flask</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="100%"></span></div>
+          <div class="head"><span>Flask</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
         </div>
 
-        <!-- Django -->
         <div class="skill">
-          <div class="title"><span>Django</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="100%"></span></div>
+          <div class="head"><span>Django</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
         </div>
 
-        <!-- Flutter -->
         <div class="skill">
-          <div class="title"><span>Flutter</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="100%"></span></div>
+          <div class="head"><span>Flutter</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="100%"></span></div>
         </div>
 
-        <!-- PHP (قيد التوسع) -->
         <div class="skill">
-          <div class="title"><span>PHP</span><span>قيد التوسع</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="60%"></span></div>
+          <div class="head"><span>PHP</span><span>قيد التوسع</span></div>
+          <div class="bar"><span data-w="65%"></span></div>
         </div>
 
-        <!-- Leadership / Soft skills -->
         <div class="skill">
-          <div class="title"><span>Leadership</span><span>مكتمل</span></div>
-          <div class="progress" aria-hidden="true"><span data-width="95%"></span></div>
+          <div class="head"><span>Leadership</span><span>ممتاز</span></div>
+          <div class="bar"><span data-w="95%"></span></div>
         </div>
 
       </div>
+    </section>
 
-      <!-- Learning table -->
-      <div style="margin-top:18px;overflow:auto">
-        <table style="width:100%;border-collapse:collapse">
-          <thead>
-            <tr style="text-align:right">
-              <th style="padding:10px;border-bottom:1px solid var(--glass-border)">Skill</th>
-              <th style="padding:10px;border-bottom:1px solid var(--glass-border)">Duration / Level</th>
-              <th style="padding:10px;border-bottom:1px solid var(--glass-border)">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">HTML</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">3 أيام</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مكتمل</td>
-            </tr>
-            <tr>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">CSS</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">متعلم ومطبق</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مكتمل</td>
-            </tr>
-            <tr>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">Python</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">6 شهور</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مكتمل</td>
-            </tr>
-            <tr>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">Flask</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مشاريع صغيرة</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مكتمل</td>
-            </tr>
-            <tr>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">Django</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مشاريع عملية</td>
-              <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)">مكتمل</td>
-            </tr>
-            <tr>
-              <td style="padding:10px">PHP</td>
-              <td style="padding:10px">قيد التوسع</td>
-              <td style="padding:10px">جاري التعلّم</td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- PROJECTS -->
+    <section id="projects" class="card">
+      <h2>مشاريعي</h2>
+      <p style="color:var(--muted)">اللي ممكن أبقى نشرتهم على GitHub — ريبو لكل مشروع.</p>
+
+      <div class="projects" id="projectsGrid">
+        <article class="project">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:900">Shorty — URL Shortener</div>
+            <div class="meta"><span style="color:var(--muted)">Django</span></div>
+          </div>
+          <p style="color:var(--muted);margin-top:8px">نظام لاختصار الروابط مخصص لإدارة الروابط الداخلية للمبادرات.</p>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <a class="btn" href="https://github.com/husseinyehya1853" target="_blank">View</a>
+            <div style="padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);align-self:center">Private</div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div style="font-weight:900">منصة اعرف بلدك (Prototype)</div>
+            <div class="meta"><span style="color:var(--muted)">Flask / Laravel</span></div>
+          </div>
+          <p style="color:var(--muted);margin-top:8px">منصة توعوية رقمية للمبادرة — صفحات تعريفية ونظام صلاحيات.</p>
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <a class="btn" href="https://github.com/husseinyehya1853" target="_blank">View</a>
+            <div style="padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);align-self:center">Active</div>
+          </div>
+        </article>
       </div>
     </section>
 
     <!-- CERTIFICATES -->
-    <section id="certs" class="about-card" aria-labelledby="certs-title">
-      <h2 id="certs-title">الشهادات والاعتمادات</h2>
-      <p style="color:var(--muted);margin-top:6px">ضيف شهاداتك هنا — اضغط على بطاقة الشهادة لتقليبها وتعديل البيانات.</p>
+    <section id="certs" class="card">
+      <h2>الشهادات والاعتمادات</h2>
+      <p style="color:var(--muted)">حط صور الشهادات هنا لاحقًا — اضغط على البطاقة لتدويرها.</p>
 
-      <div class="cert-grid" style="margin-top:12px">
-        <!-- placeholder cert 1 -->
-        <div class="cert-card" role="button" tabindex="0">
+      <div class="cert-grid">
+        <div class="cert" tabindex="0">
           <div class="cert-inner">
-            <div class="cert-front">
-              <div style="font-weight:800">[عنوان الشهادة]</div>
-              <div style="color:var(--muted)">الجهة المانحة — التاريخ</div>
-              <div style="margin-top:8px;color:var(--muted)">مكان لصورة الشهادة</div>
+            <div class="cert-face cert-front">
+              <div style="font-weight:900">[عنوان الشهادة]</div>
+              <div style="color:var(--muted);margin-top:6px">الجهة — التاريخ</div>
+              <div style="margin-top:10px;color:var(--muted)">مكان لصورة الشهادة</div>
             </div>
-            <div class="cert-back">
-              <div style="font-weight:700">تفاصيل إضافية</div>
-              <div style="color:var(--muted)">وصف مختصر عن الشهادة أو رابط لتحميلها لاحقًا</div>
+            <div class="cert-face cert-back">
+              <div style="font-weight:700">تفاصيل</div>
+              <div style="color:var(--muted);margin-top:6px">وصف أو رابط لتحميل الشهادة.</div>
             </div>
           </div>
         </div>
 
-        <!-- placeholder cert 2 -->
-        <div class="cert-card" role="button" tabindex="0">
+        <div class="cert" tabindex="0">
           <div class="cert-inner">
-            <div class="cert-front">
-              <div style="font-weight:800">[عنوان الشهادة]</div>
-              <div style="color:var(--muted)">الجهة المانحة — التاريخ</div>
-              <div style="margin-top:8px;color:var(--muted)">مكان لصورة الشهادة</div>
+            <div class="cert-face cert-front">
+              <div style="font-weight:900">[عنوان الشهادة]</div>
+              <div style="color:var(--muted);margin-top:6px">الجهة — التاريخ</div>
+              <div style="margin-top:10px;color:var(--muted)">مكان لصورة الشهادة</div>
             </div>
-            <div class="cert-back">
-              <div style="font-weight:700">تفاصيل إضافية</div>
-              <div style="color:var(--muted)">وصف مختصر عن الشهادة أو رابط لتحميلها لاحقًا</div>
+            <div class="cert-face cert-back">
+              <div style="font-weight:700">تفاصيل</div>
+              <div style="color:var(--muted);margin-top:6px">وصف أو رابط لتحميل الشهادة.</div>
             </div>
-          </div>
-        </div>
-
-        <!-- placeholder cert 3 -->
-        <div class="cert-card" role="button" tabindex="0">
-          <div class="cert-inner">
-            <div class="cert-front">
-              <div style="font-weight:800">[عنوان الشهادة]</div>
-              <div style="color:var(--muted)">الجهة المانحة — التاريخ</div>
-              <div style="margin-top:8px;color:var(--muted)">مكان لصورة الشهادة</div>
-            </div>
-            <div class="cert-back">
-              <div style="font-weight:700">تفاصيل إضافية</div>
-              <div style="color:var(--muted)">وصف مختصر عن الشهادة أو رابط لتحميلها لاحقًا</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <p style="color:var(--muted);margin-top:12px">هاتبقى تقدر تبعتلي الشهادات وانا أرفع الصور وأظبطها كويس على البورتفوليو.</p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="about-card" aria-labelledby="projects-title">
-      <h2 id="projects-title">مشاريعي</h2>
-      <p style="color:var(--muted);margin-top:6px">بعض المشاريع اللي رفعتها على GitHub — اضغط على الزر لفتح الريبو.</p>
-
-      <div class="projects-grid" style="margin-top:12px">
-        <div class="project-card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:800">Shorty (URL shortener)</div>
-            <div class="tag">Django</div>
-          </div>
-          <div style="color:var(--muted)">نظام لاختصار الروابط مخصص للفريق التقني — خاص بمنصة المبادرة.</div>
-          <div class="meta">
-            <div style="color:var(--muted)">Status: Private</div>
-            <a class="btn" href="https://github.com/husseinyehya1853" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:800">مشروع تعليمي</div>
-            <div class="tag">Flutter</div>
-          </div>
-          <div style="color:var(--muted)">واجهة تطبيق تعليمي لشرح مبادئ HTML & CSS</div>
-          <div class="meta">
-            <div style="color:var(--muted)">Status: Active</div>
-            <a class="btn" href="https://github.com/husseinyehya1853" target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="about-card" aria-labelledby="contact-title">
-      <h2 id="contact-title">تواصل معايا</h2>
-      <p style="color:var(--muted);margin-top:6px">لو عايز تبعتلي شهادة، تعاون، أو عرض شغل — ابعت رسالة هنا.</p>
+    <section id="contact" class="card">
+      <h2>تواصل معايا</h2>
+      <div class="contact-grid">
+        <div class="form">
+          <label>الاسم الكامل
+            <input type="text" id="cname" placeholder="اسمك الكامل" required>
+          </label>
+          <label>البريد الإلكتروني
+            <input type="email" id="cemail" placeholder="name@example.com" required>
+          </label>
+          <label>رسالتك
+            <textarea id="cmsg" rows="6" placeholder="اكتب رسالتك..."></textarea>
+          </label>
+          <button class="send" id="sendBtn">إرسال الرسالة</button>
+          <p id="formNote" style="color:var(--muted);margin-top:8px;font-size:14px">* النسخة دي مش بتبعث فعليًا — لو عايز تواصل حقيقي ابعت لي على GitHub.</p>
+        </div>
 
-      <form class="contact-form" action="#" method="post" onsubmit="alert('شكراً — الرسالة مش متوصلها فعلياً في النسخة دي. تبعتلي هنا على GitHub لو حابب.'); return false;">
-        <label style="display:flex;flex-direction:column;gap:6px">
-          <span style="font-weight:700">الاسم الكامل</span>
-          <input type="text" name="name" placeholder="اكتب اسمك الكامل" required>
-        </label>
-
-        <label style="display:flex;flex-direction:column;gap:6px">
-          <span style="font-weight:700">البريد الإلكتروني</span>
-          <input type="email" name="email" placeholder="name@example.com" required>
-        </label>
-
-        <label style="display:flex;flex-direction:column;gap:6px">
-          <span style="font-weight:700">الرسالة</span>
-          <textarea name="message" placeholder="اكتب رسالتك هنا..." rows="6" required></textarea>
-        </label>
-
-        <button class="send" type="submit">إرسال الرسالة</button>
-      </form>
+        <aside style="padding:12px;border-radius:12px;border:1px solid var(--glass-border);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))">
+          <h3 style="margin-top:0">معلومات سريعة</h3>
+          <p style="color:var(--muted);margin:6px 0"><strong>المدرسة:</strong> مدرسة الشهيد مدحت طلعت</p>
+          <p style="color:var(--muted);margin:6px 0"><strong>الموقع:</strong> بنها، القليوبية</p>
+          <p style="color:var(--muted);margin:6px 0"><strong>GitHub:</strong> husseinyehya1853</p>
+          <div style="margin-top:12px">
+            <a class="btn" href="https://github.com/husseinyehya1853" target="_blank">شوف GitHub</a>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       © 2025 – All rights reserved — حسين يحيي
     </footer>
 
   </div>
 
-  <!-- Small JS for animations and interactivity -->
-  <script>
-    // animate skill bars based on data-width attribute
-    document.addEventListener('DOMContentLoaded', function(){
-      const spans = document.querySelectorAll('.progress > span');
-      spans.forEach((s, i) => {
-        const w = s.getAttribute('data-width') || '0%';
-        // delay for staggered animation
-        setTimeout(() => {
-          s.style.width = w;
-        }, 150 * i);
-      });
+<script>
+  // ========== Theme toggle ==========
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('themeToggle');
+  function setTheme(t){
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('theme', t);
+  }
+  const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  setTheme(saved);
+  themeToggle.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    setTheme(cur);
+  });
 
-      // cert flip on click / keyboard
-      document.querySelectorAll('.cert-card').forEach(card => {
-        const inner = card.querySelector('.cert-inner');
-        card.addEventListener('click', () => inner.classList.toggle('flipped'));
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            inner.classList.toggle('flipped');
-          }
-        });
-      });
+  // ========== Typed name effect ==========
+  const nameEl = document.getElementById('typed-name');
+  const fullName = 'حسين يحيي — Hussein Yehya';
+  let i = 0;
+  function typeNext(){
+    if(i <= fullName.length){
+      nameEl.textContent = fullName.slice(0, i);
+      i++;
+      setTimeout(typeNext, 40);
+    }
+  }
+  setTimeout(typeNext, 600);
 
-      // smooth scroll for nav links
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        a.addEventListener('click', (e) => {
-          e.preventDefault();
-          const href = a.getAttribute('href');
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
+  // ========== Skills animate on scroll ==========
+  const skillSpans = document.querySelectorAll('.bar > span');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const span = entry.target;
+        const w = span.getAttribute('data-w') || '0%';
+        span.style.width = w;
+      }
     });
-  </script>
+  }, {threshold: 0.4});
+  skillSpans.forEach(s => observer.observe(s));
+
+  // ========== Cert flip ==========
+  document.querySelectorAll('.cert').forEach(c=>{
+    const inner = c.querySelector('.cert-inner');
+    c.addEventListener('click', ()=> inner.classList.toggle('flipped'));
+    c.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') inner.classList.toggle('flipped') });
+  });
+
+  // ========== Smooth scroll nav ==========
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.getAttribute('href');
+      const el = document.querySelector(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // ========== Contact form basic ==========
+  document.getElementById('sendBtn').addEventListener('click', (e)=>{
+    e.preventDefault();
+    const name = document.getElementById('cname').value.trim();
+    const email = document.getElementById('cemail').value.trim();
+    const msg = document.getElementById('cmsg').value.trim();
+    if(!name || !email || !msg){ alert('من فضلك املأ كل الحقول'); return; }
+    alert('شكرًا! الرسالة تم تسجيلها محليًا (نسخة) — تواصل معي عبر GitHub فعليًا.');
+    // clear
+    document.getElementById('cname').value='';document.getElementById('cemail').value='';document.getElementById('cmsg').value='';
+  });
+
+  // ========== Download CV (generates simple text CV) ==========
+  document.getElementById('downloadCv').addEventListener('click', ()=>{
+    const cvText = `
+      حسين يحيي حسين أحمد
+      قائد فريق SOT — الصف الثاني الثانوي
+      المدرسة: مدرسة الشهيد مدحت طلعت — بنها، القليوبية
+      الجنسيات: مصري + مغربي
+      GitHub: https://github.com/husseinyehya1853
+
+      المهارات:
+      - Python (ممتاز)
+      - HTML/CSS (ممتاز)
+      - Flask, Django (ممتاز)
+      - Flutter (ممتاز)
+      - PHP (قيد التوسع)
+
+      إنجازات:
+      - تأسيس فريق تقني بالمدرسة
+      - إدارة مشاريع تعليمية ورفعها على GitHub
+    `;
+    const blob = new Blob([cvText], {type:'text/plain;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'CV_Hussein_Yehya.txt';
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+  });
+
+  // ========== small accessibility: reduce animations when prefers-reduced-motion ==========
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('*').forEach(el=> el.style.transitionDuration='0s');
+  }
+</script>
 </body>
-</html>
+            </html>
